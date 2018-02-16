@@ -155,7 +155,3 @@ class App extends Component {
 ```
 
 Here, our render callback will also re-render when the boolean passed into `CurrentTime`’s `format` prop changes.
-
-## Recompose
-
-TODO: documentation coming soon . . .
