@@ -1,0 +1,57 @@
+{
+  "name": "pure-render-callback-component",
+  "version": "0.0.1",
+  "description": "Use the render callback pattern without sacrificing component purity",
+  "main": "lib/pure-render-callback-component.js",
+  "files": [
+    "lib"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "runkitExample": "const {PureRenderCallbackComponent} = require('pure-render-callback-component')",
+  "scripts": {
+    "test": "yarn run flow check && jest",
+    "build": "babel src --out-dir lib --ignore src/pure-render-callback-component.test.js && cp src/pure-render-callback-component.js.flow lib",
+    "prepare": "yarn build",
+    "release": "release-it"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leeds-eBooks/pure-render-callback-component.git"
+  },
+  "keywords": [
+    "javascript",
+    "functional",
+    "react",
+    "react-native",
+    "render-callback",
+    "pure",
+    "purecomponent"
+  ],
+  "author": "benstyles",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Leeds-eBooks/pure-render-callback-component/issues"
+  },
+  "homepage": "https://github.com/Leeds-eBooks/pure-render-callback-component#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "flow-bin": "^0.65.0",
+    "flow-typed": "^2.3.0",
+    "jest": "^22.2.1",
+    "release-it": "^7.0.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "bracketSpacing": false,
+    "semi": false,
+    "jsxBracketSameLine": true
+  }
+}

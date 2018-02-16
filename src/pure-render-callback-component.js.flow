@@ -1,0 +1,8 @@
+// @flow
+
+import type {Component} from 'react'
+
+declare export default class PureRenderCallbackComponent<
+  P: {children: Function, extraProps: {}},
+  S
+> extends Component<P, S> {}
