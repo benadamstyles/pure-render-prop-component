@@ -3,6 +3,12 @@
 [![Build Status](https://travis-ci.org/Leeds-eBooks/pure-render-callback-component.svg?branch=master)](https://travis-ci.org/Leeds-eBooks/pure-render-callback-component)
 [![Greenkeeper badge](https://badges.greenkeeper.io/Leeds-eBooks/pure-render-callback-component.svg)](https://greenkeeper.io/)
 
+```sh
+npm install --save pure-render-callback-component
+# or
+yarn add pure-render-callback-component
+```
+
 The [render callback pattern](https://reactpatterns.com/#render-callback) in React allows us to build highly functional components, but it doesn’t play well with how React currently manages re-rendering.
 
 ```js
@@ -73,6 +79,8 @@ Now, `currentTimeCallback` is only created once. `PureComponent` compares `props
 **But there is a big problem waiting to happen.** Our `currentTimeCallback` doesn’t just depend on the `currentTime` argument passed down from our `CurrentTime` component. It also renders `App`’s `props.pageTitle`. But with the above setup, when `pageTitle` changes, `currentTimeCallback` will not re-render. It will show **the old `pageTitle`**.
 
 I struggled with this problem, trying all sorts of horrible hacks, until I came across [this Github issue on the React repo](https://github.com/facebook/react/issues/4136), and the [suggestion](https://github.com/facebook/react/issues/4136#issuecomment-112168425) by a React developer of a possible solution. `pure-render-callback-component` is my implementation of that solution.
+
+## Usage
 
 ```js
 import React, {Component} from 'react'
