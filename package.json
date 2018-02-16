@@ -15,7 +15,7 @@
   "runkitExample": "const {PureRenderCallbackComponent} = require('pure-render-callback-component')",
   "scripts": {
     "test": "yarn run flow check && jest",
-    "build": "babel src --out-dir lib --ignore src/pure-render-callback-component.test.js && cp src/pure-render-callback-component.js.flow lib",
+    "build": "babel src --out-dir lib --ignore src/pure-render-callback-component.test.js,src/flow-tests.js && cp src/pure-render-callback-component.js.flow lib",
     "prepare": "yarn build",
     "release": "release-it"
   },
@@ -40,11 +40,15 @@
   "homepage": "https://github.com/Leeds-eBooks/pure-render-callback-component#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-jest": "^22.2.2",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "flow-bin": "^0.65.0",
     "flow-typed": "^2.3.0",
     "jest": "^22.2.1",
+    "react": "^16.2.0",
+    "react-test-renderer": "^16.2.0",
     "release-it": "^7.0.0"
   },
   "prettier": {
@@ -53,5 +57,12 @@
     "bracketSpacing": false,
     "semi": false,
     "jsxBracketSameLine": true
+  },
+  "dependencies": {
+    "fbjs": "^0.8.16",
+    "lodash.omit": "^4.5.0"
+  },
+  "peerDependencies": {
+    "react": "^16.2.0"
   }
 }
