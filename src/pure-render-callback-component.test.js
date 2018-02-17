@@ -68,6 +68,12 @@ describe('PureRenderCallbackComponent', () => {
       expect(renderSpy).toHaveBeenCalledTimes(2)
     })
 
+    it('doesn’t update if extraProps changes but is shallowEqual', () => {
+      expect(instance.state.cb).toHaveBeenCalledTimes(1)
+      instance.setState({a: 'a'})
+      expect(instance.state.cb).toHaveBeenCalledTimes(1)
+    })
+
     it('updates if extraProps changes', () => {
       expect(instance.state.cb).toHaveBeenCalledTimes(1)
       instance.setState({a: 'a'})
@@ -134,6 +140,12 @@ describe('PureRenderCallbackComponent', () => {
       instance.setState({a: 'b'})
       expect(newCb).toHaveBeenCalledTimes(1)
       expect(renderSpy).toHaveBeenCalledTimes(2)
+    })
+
+    it('doesn’t update if extraProps changes but is shallowEqual', () => {
+      expect(instance.state.cb).toHaveBeenCalledTimes(1)
+      instance.setState({a: 'a'})
+      expect(instance.state.cb).toHaveBeenCalledTimes(1)
     })
 
     it('updates if extraProps changes', () => {

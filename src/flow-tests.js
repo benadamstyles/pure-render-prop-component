@@ -3,31 +3,58 @@
 import React, {type Node} from 'react'
 import PureRenderCallbackComponent from './pure-render-callback-component'
 
-type P = {
+type PChildren = {
   children: () => Node,
   extraProps?: {a?: string},
+  test?: string,
 }
 
-export default class TestComponent extends PureRenderCallbackComponent<P, {}> {
+type PRender = {
+  render: () => Node,
+  extraProps?: {a?: string},
+  test?: string,
+}
+
+class TestComponentChildren extends PureRenderCallbackComponent<PChildren, {}> {
   render() {
     return this.props.children()
   }
 }
 
-// $FlowExpectError
-const C1 = <TestComponent />
+class TestComponentRender extends PureRenderCallbackComponent<PRender, {}> {
+  render() {
+    return this.props.render()
+  }
+}
 
 // $FlowExpectError
-const C2 = <TestComponent extraProps={{}} />
+const C1c = <TestComponentChildren />
+// $FlowExpectError
+const C1r = <TestComponentRender />
 
-const C3 = <TestComponent>{() => {}}</TestComponent>
+// $FlowExpectError
+const C2c = <TestComponentChildren extraProps={{}} />
+// $FlowExpectError
+const C2r = <TestComponentRender extraProps={{}} />
 
-const C4 = <TestComponent extraProps={{}}>{() => {}}</TestComponent>
+const C3c = <TestComponentChildren>{() => {}}</TestComponentChildren>
+const C3r = <TestComponentRender render={() => {}} />
 
-const C5 = (
-  <TestComponent test="test" extraProps={{}}>
+const C4c = (
+  <TestComponentChildren extraProps={{}}>{() => {}}</TestComponentChildren>
+)
+const C4r = <TestComponentRender extraProps={{}} render={() => {}} />
+
+const C5c = (
+  <TestComponentChildren test="test" extraProps={{}}>
     {() => {}}
-  </TestComponent>
+  </TestComponentChildren>
+)
+const C5r = (
+  <TestComponentRender test="test" extraProps={{}} render={() => {}} />
 )
 
-const C6 = <TestComponent test="test">{() => {}}</TestComponent>
+const C6c = (
+  <TestComponentChildren test="test">{() => {}}</TestComponentChildren>
+)
+const C6r = <TestComponentRender test="test" render={() => {}} />
