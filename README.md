@@ -188,3 +188,17 @@ Here, our render callback will also re-render when the boolean passed into `Curr
   ```
 
   Using either one for a purpose other than [the render callback pattern](https://reactpatterns.com/#render-callback) will lead to unexpected behaviour, including but not limited to a stale UI due to missed renders.
+
+## How does it work?
+
+```js
+shouldComponentUpdate(nextProps, nextState) {
+  const {props, state} = this
+  const omitKeys = ['extraProps', 'children', 'render']
+  return (
+    !shallowEqual(state, nextState) ||
+    !shallowEqual(omit(props, omitKeys), omit(nextProps, omitKeys)) ||
+    !shallowEqual(props.extraProps, nextProps.extraProps)
+  )
+}
+```
