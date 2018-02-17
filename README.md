@@ -1,5 +1,6 @@
 # PureRenderCallbackComponent
 
+[![npm version](https://badge.fury.io/js/pure-render-callback-component.svg)](https://www.npmjs.com/package/pure-render-callback-component)
 [![Build Status](https://travis-ci.org/Leeds-eBooks/pure-render-callback-component.svg?branch=master)](https://travis-ci.org/Leeds-eBooks/pure-render-callback-component)
 [![Greenkeeper badge](https://badges.greenkeeper.io/Leeds-eBooks/pure-render-callback-component.svg)](https://greenkeeper.io/)
 
