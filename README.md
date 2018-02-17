@@ -155,3 +155,17 @@ class App extends Component {
 ```
 
 Here, our render callback will also re-render when the boolean passed into `CurrentTime`’s `format` prop changes.
+
+## Recompose
+
+This package also exports a function which you can use with [Recompose](https://github.com/acdlite/recompose)’s [`shouldUpdate()`](https://github.com/acdlite/recompose/blob/master/docs/API.md#shouldupdate) function.
+
+```js
+import {shouldRenderCallbackUpdate} from 'pure-render-callback-component'
+import {shouldUpdate} from 'recompose'
+
+const FunctionalRenderCallbackComponent = props =>
+  props.children(props.extraProps)
+
+export default shouldUpdate(shouldRenderCallbackUpdate)(FunctionalComponent)
+```

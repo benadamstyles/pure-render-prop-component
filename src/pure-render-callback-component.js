@@ -18,3 +18,14 @@ export default class PureRenderCallbackComponent<
     )
   }
 }
+
+export const shouldRenderCallbackUpdate = (
+  props: Object,
+  nextProps: Object
+) => {
+  const omitKeys = ['extraProps', 'children']
+  return (
+    !shallowEqual(omit(props, omitKeys), omit(nextProps, omitKeys)) ||
+    !shallowEqual(props.extraProps, nextProps.extraProps)
+  )
+}
