@@ -3,6 +3,8 @@
 import {Component} from 'react'
 
 declare export default class PureRenderCallbackComponent<
-  P: {children: Function, +extraProps?: Object},
+  P:
+    | {children: Function, +extraProps?: Object}
+    | {render: Function, +extraProps?: Object},
   S = *
 > extends Component<P, S> {}
