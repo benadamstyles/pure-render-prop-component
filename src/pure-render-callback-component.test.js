@@ -4,18 +4,22 @@ import React, {PureComponent} from 'react'
 import deepRenderer from 'react-test-renderer'
 import PureRenderCallbackComponent from './pure-render-callback-component'
 
+const wait = ms => new Promise(r => setTimeout(r, ms))
+
+type State = {
+  a: string,
+  b: number,
+  cb: Function,
+}
+
+const renderSpy = jest.fn()
+
 describe('PureRenderCallbackComponent', () => {
+  beforeEach(() => {
+    renderSpy.mockClear()
+  })
+
   describe('using children prop', () => {
-    const wait = ms => new Promise(r => setTimeout(r, ms))
-
-    type State = {
-      a: string,
-      b: number,
-      cb: Function,
-    }
-
-    const renderSpy = jest.fn()
-
     class TestComponent extends PureRenderCallbackComponent<{
       children: Function,
       extraProps: {a: string},
@@ -49,7 +53,6 @@ describe('PureRenderCallbackComponent', () => {
     let instance
 
     beforeEach(() => {
-      renderSpy.mockClear()
       instance = deepRenderer.create(<TestWrapper />).getInstance()
     })
 
@@ -83,16 +86,6 @@ describe('PureRenderCallbackComponent', () => {
   })
 
   describe('using render prop', () => {
-    const wait = ms => new Promise(r => setTimeout(r, ms))
-
-    type State = {
-      a: string,
-      b: number,
-      cb: Function,
-    }
-
-    const renderSpy = jest.fn()
-
     class TestComponent extends PureRenderCallbackComponent<{
       render: Function,
       extraProps: {a: string},
@@ -128,7 +121,6 @@ describe('PureRenderCallbackComponent', () => {
     let instance
 
     beforeEach(() => {
-      renderSpy.mockClear()
       instance = deepRenderer.create(<TestWrapper />).getInstance()
     })
 
