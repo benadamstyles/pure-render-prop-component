@@ -79,7 +79,7 @@ Now, `currentTimeCallback` is only created once. `PureComponent` compares `props
 
 **But there is a big problem waiting to happen.** Our `currentTimeCallback` doesn’t just depend on the `currentTime` argument passed down from our `CurrentTime` component. It also renders `App`’s `props.pageTitle`. But with the above setup, when `pageTitle` changes, `currentTimeCallback` will not re-render. It will show **the old `pageTitle`**.
 
-I struggled with this problem, trying all sorts of horrible hacks, until I came across [this Github issue on the React repo](https://github.com/facebook/react/issues/4136), and the [suggestion](https://github.com/facebook/react/issues/4136#issuecomment-112168425) by a React developer of a possible solution. `pure-render-callback-component` is my implementation of that solution.
+I struggled with this problem, trying all sorts of horrible hacks, until I came across [this Github issue on the React repo](https://github.com/facebook/react/issues/4136), and the [suggestion](https://github.com/facebook/react/issues/4136#issuecomment-112168425) by a React developer of a possible solution. `PureRenderCallbackComponent` is my implementation of that solution.
 
 ## Usage
 
@@ -91,6 +91,8 @@ class CurrentTime extends PureRenderCallbackComponent {
   state = {currentTime: Date.now()}
   render() {
     return this.props.children(this.state.currentTime, this.props.extraProps)
+    // NOTE: PureRenderCallbackComponent also supports render props ☟
+    return this.props.render(this.state.currentTime, this.props.extraProps)
   }
 }
 
@@ -106,6 +108,18 @@ class App extends Component {
             </div>
           )}
         </CurrentTime>
+        {
+          // NOTE: PureRenderCallbackComponent also supports render props (instead of children) ☟
+        }
+        <CurrentTime
+          extraProps={{pageTitle: this.props.pageTitle}}
+          render={(currentTime, extraProps) => (
+            <div>
+              <p>{extraProps.pageTitle}</p>
+              <p>{currentTime}</p>
+            </div>
+          )}
+        />
       </div>
     )
   }
@@ -156,3 +170,21 @@ class App extends Component {
 ```
 
 Here, our render callback will also re-render when the boolean passed into `CurrentTime`’s `format` prop changes.
+
+## Caveats & Assumptions
+
+* `PureRenderCallbackComponent` assumes you will either use a `props.children` callback:
+
+  ```js
+  <RenderCallbackComponent>
+    {(val, extraProps) => <Node />}
+  <RenderCallbackComponent>
+  ```
+
+  or a “render prop”:
+
+  ```js
+  <RenderCallbackComponent render={(val, extraProps) => <Node />} />
+  ```
+
+  Using either one for a purpose other than [the render callback pattern](https://reactpatterns.com/#render-callback) will lead to unexpected behaviour, including but not limited to a stale UI due to missed renders.
