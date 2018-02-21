@@ -1,6 +1,6 @@
 {
   "name": "pure-render-callback-component",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use the render callback pattern without sacrificing component purity",
   "main": "lib/pure-render-callback-component.js",
   "files": [
