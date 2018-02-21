@@ -8,5 +8,4 @@ install:
   - yarn install
   - yarn check --integrity
 script:
-  # - yarn run lint
   - yarn test

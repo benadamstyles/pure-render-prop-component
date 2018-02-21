@@ -1,4 +1,5 @@
 // @flow
+/* eslint-disable no-unused-vars, no-empty-function */
 
 import React, {type Node} from 'react'
 import PureRenderCallbackComponent from './pure-render-callback-component'

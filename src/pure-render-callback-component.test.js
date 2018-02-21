@@ -1,10 +1,9 @@
 // @flow
+/* eslint-disable immutable/no-mutation, immutable/no-let */
 
 import React, {PureComponent} from 'react'
 import deepRenderer from 'react-test-renderer'
 import PureRenderCallbackComponent from './pure-render-callback-component'
-
-const wait = ms => new Promise(r => setTimeout(r, ms))
 
 type State = {
   a: string,
