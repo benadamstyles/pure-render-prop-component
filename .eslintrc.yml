@@ -1,1 +1,10 @@
 extends: mealsup
+overrides:
+  - files: "**/*.test.js"
+    rules:
+      fp/no-let: 0
+      fp/no-mutation: 0
+  - files: src/flow-tests.js
+    rules:
+      no-unused-vars: 0
+      no-empty-function: 0

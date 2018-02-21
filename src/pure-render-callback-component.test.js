@@ -1,5 +1,4 @@
 // @flow
-/* eslint-disable immutable/no-mutation, immutable/no-let */
 
 import React, {PureComponent} from 'react'
 import deepRenderer from 'react-test-renderer'
