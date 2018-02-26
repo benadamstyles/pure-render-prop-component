@@ -15,7 +15,7 @@
   "runkitExample": "const {PureRenderCallbackComponent} = require('pure-render-callback-component')",
   "scripts": {
     "lint": "eslint .",
-    "test": "yarn run lint && yarn run flow check && jest",
+    "test": "yarn lint && yarn run flow check && jest",
     "build": "babel src --out-dir lib --ignore src/pure-render-callback-component.test.js,src/flow-tests.js && cp src/pure-render-callback-component.js.flow lib",
     "prepare": "yarn build",
     "release": "release-it"

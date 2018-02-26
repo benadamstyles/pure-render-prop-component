@@ -15,6 +15,11 @@ type PRender = {
   test?: string,
 }
 
+type PNoExtraProps = {
+  children: () => Node,
+  test?: string,
+}
+
 class TestComponentChildren extends PureRenderCallbackComponent<PChildren, {}> {
   render() {
     return this.props.children()
@@ -24,6 +29,15 @@ class TestComponentChildren extends PureRenderCallbackComponent<PChildren, {}> {
 class TestComponentRender extends PureRenderCallbackComponent<PRender, {}> {
   render() {
     return this.props.render()
+  }
+}
+
+class TestComponentNoExtraProps extends PureRenderCallbackComponent<
+  PNoExtraProps,
+  {}
+> {
+  render() {
+    return this.props.children()
   }
 }
 

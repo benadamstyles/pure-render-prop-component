@@ -5,9 +5,7 @@ import omit from 'lodash.omit'
 import shallowEqual from 'fbjs/lib/shallowEqual'
 
 export default class PureRenderCallbackComponent<
-  P:
-    | {children: Function, +extraProps?: Object}
-    | {render: Function, +extraProps?: Object},
+  P: {children: Function} | {render: Function},
   S = *
 > extends Component<P, S> {
   shouldComponentUpdate(nextProps: P, nextState: S) {
@@ -16,7 +14,7 @@ export default class PureRenderCallbackComponent<
     return (
       !shallowEqual(state, nextState) ||
       !shallowEqual(omit(props, omitKeys), omit(nextProps, omitKeys)) ||
-      !shallowEqual(props.extraProps, nextProps.extraProps)
+      !shallowEqual((props: Object).extraProps, (nextProps: Object).extraProps)
     )
   }
 }
