@@ -2,7 +2,7 @@
 
 import {Component} from 'react'
 import omit from 'lodash.omit'
-import shallowEqual from 'fbjs/lib/shallowEqual'
+import shallowEqual from 'recompose/shallowEqual'
 
 export default class PureRenderCallbackComponent<
   P: {children: Function} | {render: Function},

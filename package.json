@@ -69,8 +69,8 @@
     "jsxBracketSameLine": true
   },
   "dependencies": {
-    "fbjs": "^0.8.16",
-    "lodash.omit": "^4.5.0"
+    "lodash.omit": "^4.5.0",
+    "recompose": "^0.26.0"
   },
   "peerDependencies": {
     "react": "^16.2.0"
