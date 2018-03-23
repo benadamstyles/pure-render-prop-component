@@ -1,8 +1,8 @@
 {
-  "name": "pure-render-callback-component",
+  "name": "pure-render-prop-component",
   "version": "1.1.1",
-  "description": "Use the render callback pattern without sacrificing component purity",
-  "main": "lib/pure-render-callback-component.js",
+  "description": "Use the render prop pattern without sacrificing component purity",
+  "main": "lib/pure-render-prop-component.js",
   "files": [
     "lib"
   ],
@@ -12,17 +12,17 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "runkitExample": "const {PureRenderCallbackComponent} = require('pure-render-callback-component')",
+  "runkitExample": "const {PureRenderPropComponent} = require('pure-render-prop-component')",
   "scripts": {
     "lint": "eslint .",
     "test": "yarn lint && yarn run flow check && jest",
-    "build": "babel src --out-dir lib --ignore src/pure-render-callback-component.test.js,src/flow-tests.js && cp src/pure-render-callback-component.js.flow lib",
+    "build": "babel src --out-dir lib --ignore src/pure-render-prop-component.test.js,src/flow-tests.js && cp src/pure-render-prop-component.js.flow lib",
     "prepare": "yarn build",
     "release": "release-it"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Leeds-eBooks/pure-render-callback-component.git"
+    "url": "git+https://github.com/Leeds-eBooks/pure-render-prop-component.git"
   },
   "keywords": [
     "javascript",
@@ -30,15 +30,16 @@
     "react",
     "react-native",
     "render-callback",
+    "render-prop",
     "pure",
     "purecomponent"
   ],
   "author": "benstyles",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Leeds-eBooks/pure-render-callback-component/issues"
+    "url": "https://github.com/Leeds-eBooks/pure-render-prop-component/issues"
   },
-  "homepage": "https://github.com/Leeds-eBooks/pure-render-callback-component#readme",
+  "homepage": "https://github.com/Leeds-eBooks/pure-render-prop-component#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.2",

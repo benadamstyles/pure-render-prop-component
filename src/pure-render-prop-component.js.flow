@@ -3,7 +3,7 @@
 // eslint-disable-next-line no-unused-vars
 import {Component} from 'react'
 
-declare export default class PureRenderCallbackComponent<
+declare export default class PureRenderPropComponent<
   P: {children: Function} | {render: Function},
   S = *
 > extends Component<P, S> {}
