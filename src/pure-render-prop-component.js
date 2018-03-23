@@ -4,7 +4,7 @@ import {Component} from 'react'
 import omit from 'lodash.omit'
 import shallowEqual from 'recompose/shallowEqual'
 
-export default class PureRenderCallbackComponent<
+export default class PureRenderPropComponent<
   P: {children: Function} | {render: Function},
   S = *
 > extends Component<P, S> {

@@ -2,7 +2,7 @@
 
 import React, {PureComponent} from 'react'
 import deepRenderer from 'react-test-renderer'
-import PureRenderCallbackComponent from './pure-render-callback-component'
+import PureRenderPropComponent from './pure-render-prop-component'
 
 type State = {
   a: string,
@@ -12,13 +12,13 @@ type State = {
 
 const renderSpy = jest.fn()
 
-describe('PureRenderCallbackComponent', () => {
+describe('PureRenderPropComponent', () => {
   beforeEach(() => {
     renderSpy.mockClear()
   })
 
   describe('using children prop', () => {
-    class TestComponent extends PureRenderCallbackComponent<{
+    class TestComponent extends PureRenderPropComponent<{
       children: Function,
       extraProps: {a: string},
       other?: string,
@@ -90,7 +90,7 @@ describe('PureRenderCallbackComponent', () => {
   })
 
   describe('using render prop', () => {
-    class TestComponent extends PureRenderCallbackComponent<{
+    class TestComponent extends PureRenderPropComponent<{
       render: Function,
       extraProps: {a: string},
       other?: string,
