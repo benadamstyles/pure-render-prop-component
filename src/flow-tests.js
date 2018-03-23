@@ -1,7 +1,7 @@
 // @flow
 
 import React, {type Node} from 'react'
-import PureRenderCallbackComponent from './pure-render-callback-component'
+import PureRenderPropComponent from './pure-render-prop-component'
 
 type PChildren = {
   children: () => Node,
@@ -20,19 +20,19 @@ type PNoExtraProps = {
   test?: string,
 }
 
-class TestComponentChildren extends PureRenderCallbackComponent<PChildren, {}> {
+class TestComponentChildren extends PureRenderPropComponent<PChildren, {}> {
   render() {
     return this.props.children()
   }
 }
 
-class TestComponentRender extends PureRenderCallbackComponent<PRender, {}> {
+class TestComponentRender extends PureRenderPropComponent<PRender, {}> {
   render() {
     return this.props.render()
   }
 }
 
-class TestComponentNoExtraProps extends PureRenderCallbackComponent<
+class TestComponentNoExtraProps extends PureRenderPropComponent<
   PNoExtraProps,
   {}
 > {
