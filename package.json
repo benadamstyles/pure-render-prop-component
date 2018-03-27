@@ -1,6 +1,6 @@
 {
   "name": "pure-render-prop-component",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Use the render prop pattern without sacrificing component purity",
   "main": "lib/pure-render-prop-component.js",
   "files": [
