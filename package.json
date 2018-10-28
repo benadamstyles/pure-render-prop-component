@@ -51,7 +51,7 @@
     "eslint-config-mealsup": "^2.4.0",
     "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-eslint-comments": "^2.0.2",
-    "eslint-plugin-flowtype": "^2.46.1",
+    "eslint-plugin-flowtype": "^3.1.4",
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jest": "^21.15.0",
