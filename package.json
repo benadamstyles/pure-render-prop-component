@@ -62,7 +62,7 @@
     "jest": "^22.4.3",
     "react": "^16.2.0",
     "react-test-renderer": "^16.2.0",
-    "release-it": "^7.2.1"
+    "release-it": "^10.4.1"
   },
   "prettier": {
     "singleQuote": true,
