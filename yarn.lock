@@ -1908,15 +1908,17 @@ eslint-ast-utils@^1.0.0:
     lodash.get "^4.4.2"
     lodash.zip "^4.2.0"
 
-eslint-config-mealsup@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-mealsup/-/eslint-config-mealsup-2.4.0.tgz#fbe79a456543c411c0f5ca18bf8e53af778e0c18"
+eslint-config-mealsup@^2.7.2:
+  version "2.7.2"
+  resolved "https://registry.yarnpkg.com/eslint-config-mealsup/-/eslint-config-mealsup-2.7.2.tgz#cccb42b0555157659320f36eb8bb6f147a329b83"
+  integrity sha512-YpAsKm1Nb6mCZkEMIenA59721qb18DAzIo8gJQ3yFHRrvydsxF0KMYi5nJlrVDIB//OuHoq3WJXvGzcEx27f5Q==
   dependencies:
-    eslint-config-rapt "^1.4.0"
+    eslint-config-rapt "^1.5.4"
 
-eslint-config-rapt@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-rapt/-/eslint-config-rapt-1.4.0.tgz#9f130f7883172894ef07b784f4c6b4441cd72420"
+eslint-config-rapt@^1.5.4:
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/eslint-config-rapt/-/eslint-config-rapt-1.5.4.tgz#40416e900e51531544d4692f2a0a69e30e1ca259"
+  integrity sha512-iBKFE4gxxqekGp6wzCGWKUOgI09ILMpHYF1EmzyMN7euY7m3qLsQHh9UdZFJQ75pIdutFyzgqInAwWYftwlfTQ==
 
 eslint-import-resolver-node@^0.3.1:
   version "0.3.2"
