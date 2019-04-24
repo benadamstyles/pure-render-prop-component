@@ -48,7 +48,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "eslint": "^4.19.1",
-    "eslint-config-mealsup": "^2.4.0",
+    "eslint-config-mealsup": "^2.7.2",
     "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-eslint-comments": "^2.0.2",
     "eslint-plugin-flowtype": "^2.46.1",
